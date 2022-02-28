@@ -5,8 +5,8 @@ const enterBtn = document.getElementById("enter").addEventListener("click", func
     if (userName == 'yourname@gmail.com' && userPassword == '1234') {
         const loginArea = document.getElementById("login-area");
         loginArea.style.display = "none";
-        const transationArea = document.getElementById("transaction-area");
-        transationArea.style.display = "block";
+        const transactionArea = document.getElementById("transaction-area");
+        transactionArea.style.display = "block";
     } else {
         alert('please input valid email & password')
         document.getElementById("email").value = "";
@@ -43,13 +43,14 @@ function getInputNumber(id) {
 function updateSpanText(id, addedNumber) {
     const currentInput = document.getElementById(id).innerText;
     const currentNumber = parseFloat(currentInput);
-    let totalAmount = currentInput;
+    const totalAmount = currentNumber + addedNumber;
+    let totalCost = currentInput;
     if (totalAmount >= 0) {
-        totalAmount = currentNumber + addedNumber;
+        totalCost = totalAmount ;
     } else {
         alert('balance can not be negative')
     }
-    document.getElementById(id).innerText = totalAmount;
+    document.getElementById(id).innerText = totalCost;
 }
 
             // const currentDeposit = document.getElementById("currentDeposit").innerText;

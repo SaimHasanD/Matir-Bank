@@ -5,8 +5,8 @@
             if (userName == 'yourname@gmail.com' && userPassword == '1234') {
                 const loginArea = document.getElementById("login-area");
                 loginArea.style.display = "none";
-                const transationArea = document.getElementById("transaction-area");
-                transationArea.style.display = "block";
+                const transactionArea = document.getElementById("transaction-area");
+                transactionArea.style.display = "block";
             } else {
                 alert('please input valid email & password')
             }
