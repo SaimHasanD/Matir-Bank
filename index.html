@@ -13,9 +13,9 @@
         <h1 class="text-center">Welcome to Matir Bank</h1>
         <div class="submit-area">
             <h4>login</h4>
-            <input type="text" class="form-control" placeholder="Enter your email here">
+            <input id="email" type="text" class="form-control" placeholder="Enter your email here">
             <br>
-            <input type="password" class="form-control" placeholder="Password" name="" id="">
+            <input type="password" class="form-control" placeholder="Password" name="" id="password">
             <br>
             <button id="enter" class="btn btn-success">Enter</button>
         </div>
@@ -60,48 +60,6 @@
             </div>
         </div>
     </div>
-    <script>
-        // login button event handler
-        const enterBtn = document.getElementById("enter");
-        enterBtn.addEventListener("click", function(){
-            const loginArea = document.getElementById("login-area");
-            loginArea.style.display = "none";
-            const transationArea = document.getElementById("transaction-area");
-            transationArea.style.display = "block";
-        })
-
-        // deposit button event handler 
-        const depositBtn = document.getElementById("addDeposit");
-        depositBtn.addEventListener("click", function(){
-            const depositNumber = getInputNumber("depositAmount"); 
-
-            updateSpanText("currentDeposit", depositNumber);
-            updateSpanText("currentBalance", depositNumber);
-            document.getElementById("depositAmount").value = "";
-        }) 
-
-        // withdraw button event handler 
-        const withdrawBtn = document.getElementById("addWithdraw");
-        withdrawBtn.addEventListener("click", function(){
-            const withdrawNumber = getInputNumber("withdrawAmount");
-
-            updateSpanText("currentWithdraw", withdrawNumber)
-            updateSpanText("currentBalance", -1 * withdrawNumber)
-            document.getElementById("withdrawAmount").value = "";
-        })
-        // function
-        function getInputNumber(id){
-            const Amount = document.getElementById(id).value;
-            const Number = parseFloat(Amount);
-            return Number;
-        }
-
-        function updateSpanText(id, addedNumber){
-            const current = document.getElementById(id).innerText;
-            const currentNumber = parseFloat(current);
-            const totalAmount = addedNumber + currentNumber;
-            document.getElementById(id).innerText = totalAmount;
-        }
-    </script>
+    <script src="practice.js"></script>
 </body>
 </html>
